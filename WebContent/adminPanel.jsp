@@ -15,7 +15,7 @@
 	</div>
 <!-- 
 	<%
-	//if(session.getAttribute("userStatus")!=null){
+			//if(session.getAttribute("userStatus")!=null){
 			//		if(session.getAttribute("userStatus").equals("1")){
 	%>
 	
