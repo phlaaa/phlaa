@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@page import="java.util.ArrayList"%>
-     <%--@page import="myPackage.classes.user" --%>
+     <%@page import="myPackage.classes.user" --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
 
- <%-- checking admin student
+ <%checking admin student
            User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
            if(user.getType().endsWith("admin")){
         --%>
@@ -30,7 +30,7 @@
 				<div class="col-sm-9" style="top: 100px;">
 					<div style="background:grey;height:100%;">
 					
-					<% } else{ %>
+					<% } else{ --%>
 					
 					 <div class="container-fluid">
 			<div class="row" style="height:100%;">
@@ -49,7 +49,7 @@
 					<%
            }
            if(request.getParameter("pedt")==null){
-           %>
+           --%>
 				
 </body>
 </html>
