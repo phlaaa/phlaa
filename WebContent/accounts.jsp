@@ -58,7 +58,7 @@
 									for(int i=0;i<list.size();i++){
 										user=(User)list.get(i);
 										if(user.getUserId()!=Integer.parseInt(session.getAttribute("userId").toString())){
-								%>
+								--%>
 								<tr>
 									<td><%= user.getFirstName()+" "user.getLastName() %></td>
 									<td><%= user.getEmail() %></td>
