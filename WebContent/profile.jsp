@@ -9,6 +9,20 @@
 <title>Profile</title>
 <%@include file="bootstrap/bootstrap.jsp"%>
 </head>
+<style>
+	h2,h4 {color: white;}
+	.title
+	{
+		background: linear-gradient(60deg, #ffa726, #fb8c00);
+		box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 0, 0, 0.4);
+		padding-top:17px;
+		padding-left: 15px;
+        font-size: 21px;
+		border-radius: 4px;
+		margin-left:15px;
+		width:40%;
+	}
+</style>
 <body>
 
  <%checking admin student
