@@ -63,11 +63,27 @@ public class adduser {
 	            ResultSet rs=ps.executeQuery();
 	            while(rs.next()){
 	                str= rs.getInt("user_id");
-	                System.out.println(str);
 	            }
 	        } catch (SQLException ex) {
 	        	ex.printStackTrace();
 	            
+	        }
+	        return str;
+	    }
+	 
+	 public String getUserType(String userId){
+	      
+		 String str="";
+	        try {
+	            ps = con.prepareStatement("Select * from users where user_id=?");
+	            ps.setInt(1, Integer.parseInt(userId));
+	            ResultSet rs=ps.executeQuery();
+	            while(rs.next()){
+	                str= rs.getString("user_type");
+	            }
+	        } 
+	        catch (SQLException ex) {
+	            ex.printStackTrace();
 	        }
 	        return str;
 	    }
