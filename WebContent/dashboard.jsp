@@ -7,7 +7,7 @@
             if(loginConfirm.equals("1")){
                 
             if(pDAO.getUserType(session.getAttribute("userId").toString()).equals("admin")){
-            response.sendRedirect("signup.jsp"); 
+            response.sendRedirect("adminPanel.jsp?pagepart=0"); 
             
             }else if(pDAO.getUserType(session.getAttribute("userId").toString()).equals("student")){
                 response.sendRedirect("std-page.jsp?pgprt=0");
