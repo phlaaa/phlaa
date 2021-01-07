@@ -17,6 +17,7 @@ if(request.getParameter("page").toString().equals("login"))
     	session.setAttribute("userStatus", "1");
     	session.setAttribute("userId",pDAO.getUserId(request.getParameter("username")));
     	response.sendRedirect("dashboard.jsp");
+	
 	}	
 	else
 	{

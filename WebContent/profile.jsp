@@ -10,7 +10,9 @@
 <%@include file="bootstrap/bootstrap.jsp"%>
 </head>
 <style>
-	h2,h4 {color: white;}
+	h2,h4 {color: white;
+	
+	}
 	.title
 	{
 		background: linear-gradient(60deg, #ffa726, #fb8c00);
