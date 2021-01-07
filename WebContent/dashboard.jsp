@@ -16,6 +16,7 @@
         
             }else if(!loginConfirm.equals("1")){
                response.sendRedirect("login.jsp");
+               
             }
         }else response.sendRedirect("login.jsp");
         %>

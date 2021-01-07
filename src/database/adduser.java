@@ -70,6 +70,7 @@ public class adduser {
 	        }
 	        return str;
 	    }
+	
 	 
 	 public String getUserType(String userId){
 	      
