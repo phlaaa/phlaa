@@ -24,6 +24,7 @@
 					<div class="card-body">
 					<div class="form group">
 <form action="controller.jsp">
+<input type="hidden" name="page" value="register"> 
 	<label for="First Name"><i class="fa fa-user" aria-hidden="true"></i>First Name</label>
  <input type="text" class=" form-control"name="fName" placeholder="First Name" required>
  

@@ -69,14 +69,14 @@
 		<a href="controller.jsp?page=logout" class="btn btn-danger" style="float:right;color:white">Logout</a>
 	</div>
 	<div class="card" style="width: 40rem;">
-           	<div class="title"><center>Profile</center></div>
-           	  <div class="card-body">
+           	
            	  	
 					<%
            }
            if(request.getParameter("pedt")==null){
            %>
-           
+              <div class="title"><center>Profile</center></div>
+           	  <div class="card-body">
            	  		<table class="table"> <tr><td>Your Name</td><td><%=user.getFirstName()+" " %><%=user.getLastName() %></td></tr>
            	  		<tr><td>Email</td><td><%=user.getEmail() %></td></tr>
            	  		<tr><td>Contact No</td><td><%=user.getContact() %></td></tr>
@@ -94,7 +94,8 @@
            
            <%
            }else{
-               %>
+               %>  <div class="title"><center>Edit Profile</center></div>
+           	  <div class="card-body">
 				
 </body>
 </html>
