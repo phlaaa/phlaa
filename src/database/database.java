@@ -10,8 +10,8 @@ public class database {
 	Connection con = null;
 	try
 	{
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","SHONKI","root");
+		 Class.forName("com.mysql.cj.jdbc.Driver");
+		 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/exam?serverTimezone=UTC","root","");
 	System.out.println("establised");
 	}
 	catch(ClassNotFoundException e)

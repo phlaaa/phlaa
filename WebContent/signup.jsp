@@ -23,20 +23,28 @@
 					</div>
 					<div class="card-body">
 					<div class="form group">
-<form action="kamal1" method="post">
-	<label for="username"><i class="fa fa-user" aria-hidden="true"></i> Username</label>
- <input type="text" class=" form-control"name="username" placeholder="Enter username" required>
-<label><i class="fa fa-key" aria-hidden="true"></i> Password </label><input type="password" class=" form-control" name="password" placeholder="Enter Password" required>
-<label><i class="fa fa-envelope" aria-hidden="true"></i> Email </label> <input type="text" class=" form-control" name="email" placeholder="Enter Email" required>
-<label><i class="fa fa-calendar" aria-hidden="true"></i> Age</label><input type="number" class=" form-control" name="age" placeholder="Enter age" required>
-<label><i class="fa fa-male" aria-hidden="true"></i> Male</label> <input type="radio" value="male"name="gender" required>  
-  <label><i class="fa fa-female" aria-hidden="true"></i>Female</label> <input type="radio" value="female" name="gender" required><br>
-<label><i class="fa fa-briefcase" aria-hidden="true"></i> Occupation </label> <input type="text"class=" form-control" name="occupation" placeholder="Enter Occupation" required>
-<label><i class="fa fa-home" aria-hidden="true"></i> Address </label><input type="number" class=" form-control"name="salary" placeholder="Enter Address" required> <br>
- Admin <input type="radio"name="type"  value="admin"required>
-                                    Teacher <input type="radio"name="type" value="teacher"required>
-                                    Student<input type="radio"name="type" value="student"required>
-                                    <br> <br>
+<form action="controller.jsp">
+	<label for="First Name"><i class="fa fa-user" aria-hidden="true"></i>First Name</label>
+ <input type="text" class=" form-control"name="fName" placeholder="First Name" required>
+ 
+ 	<label for="Last Name"><i class="fa fa-user" aria-hidden="true"></i>Last Name</label>
+ <input type="text" class=" form-control"name="lName" placeholder="Last Name" required>
+ 
+ 	<label for="User Name"><i class="fa fa-user" aria-hidden="true"></i>User Name</label>
+ <input type="text" class=" form-control"name="uName" placeholder="User Name" required>
+ 
+<label><i class="fa fa-envelope" aria-hidden="true"></i> Email </label> <input type="email" class=" form-control" name="email" placeholder="Enter Email" required>
+ 
+<label><i class="fa fa-key" aria-hidden="true"></i> Password </label><input type="password" class=" form-control" name="pass" placeholder="Enter Password" required>
+
+
+<label for="Contact no"><i class="fa fa-user" aria-hidden="true"></i>contact no</label>
+ <input type="text" class=" form-control"name="contact" placeholder="contact no" required>
+
+<label><i class="fa fa-home" aria-hidden="true"></i> City </label><input type="text" class=" form-control"name="city" placeholder="Enter city" required> <br>
+
+<label><i class="fa fa-home" aria-hidden="true"></i> Address </label><input type="text" class=" form-control"name="address" placeholder="Enter Address" required> <br>
+ 
 <div class="text-center">
 <input  class="btn btn-primary" type="submit" Value="Create" name="create">
 <a class="btn btn-success" href="login.jsp"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a>

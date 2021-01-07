@@ -22,19 +22,36 @@
 						<h1>Login </h1>
 					</div>
 					<div class="card-body">
-<form action="kamal" method="post">
-	<div class="form-group">
-		<label for="username"><i class="fa fa-user" aria-hidden="true"></i>  Username</label>
- <input type="text" class="form-control" name="username" placeholder="Enter username"required>
- </div>
- <div class="form-group">
- <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
- <input type="password" class="form-control" name="password"  placeholder="Enter password" required>
- </div>
- <div class="text-center">
-<input class="btn btn-danger"type="submit" Value="Login" name="click">
-<a  class="btn btn-primary" href="signup.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i> signup</a>
-</div>
+					
+	<form action="controller.jsp" method="post">
+	<input type="hidden" name="page" value="login"> 
+					<div class="form-group">
+						<label for="username"><i class="fa fa-user" aria-hidden="true"></i>  Username</label>
+				 <input type="text" class="form-control" name="username" placeholder="Enter username"required>
+				 </div>
+				 <div class="form-group">
+				 <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+				 <input type="password" class="form-control" name="password"  placeholder="Enter password" required>
+				 </div>
+				 
+				 <div class="text-center">
+				 	<center>
+							<input type="submit" value="Login" class="btn btn-primary">
+					</center>
+				</div>
+				
+				<% 
+                    if(request.getSession().getAttribute("userStatus")!=null){
+                        System.out.println("its called");
+                  	if(request.getSession().getAttribute("userStatus").equals("-1")){  
+                      System.out.println("now inside");
+                %>
+                            <script>alert("username or password is incorrect");</script>
+               <%
+ 	                 }
+                    }
+                 %>
+                                                    
 
 
 
