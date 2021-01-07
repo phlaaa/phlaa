@@ -35,6 +35,7 @@ else if(request.getParameter("page").toString().equals("register"))
         String contactNo =request.getParameter("contact");
         String city =request.getParameter("city");
         String address =request.getParameter("address");
+        
     
          
     pDAO.addNewStudent(fName,lName,uName,email,pass,contactNo,city,address);
