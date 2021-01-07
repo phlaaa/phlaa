@@ -6,10 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.database;
+import entities.User;
 
 public class adduser {
 	final  static Connection con=database.getDBConnection();
 	PreparedStatement ps = null;
+	
+//	add student
 	
 	public void addNewStudent(String fName,String lName,String uName,String email,String pass,String contact,String city,String address){
         try {
@@ -33,6 +36,8 @@ public class adduser {
         }
     }
 	
+//	login
+	
 	 public boolean loginValidate(String userName, String userPass) throws SQLException{
 	        boolean status=false;
 	    
@@ -55,6 +60,8 @@ public class adduser {
 	          
 	}
 	 
+//	 get user id
+	 
 	 public int getUserId(String userName){
 	        int str=0;
 	        try {
@@ -71,6 +78,7 @@ public class adduser {
 	        return str;
 	    }
 	
+//	 get user type
 	 
 	 public String getUserType(String userId){
 	      
@@ -89,4 +97,26 @@ public class adduser {
 	        return str;
 	    }
 	     
+//	 get User Details
+	 
+	 public User getUserDetails(String userId){
+         User userDetails=null;
+         
+         try {
+            String sql="SELECT * from users where user_id=?";
+            ps=con.prepareStatement(sql);
+            ps.setString(1, userId);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+                userDetails=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)
+                                        ,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)
+                                            ,rs.getString(9),rs.getString(10));
+            }
+            ps.close();
+        } 
+         catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+         return userDetails;
+     }
 }

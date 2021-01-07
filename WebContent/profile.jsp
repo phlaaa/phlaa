@@ -33,8 +33,9 @@
 
  <%
            User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
-           if(user.getType().endsWith("admin")){
-        %>
+           if(user.getType().endsWith("admin"))
+           {
+ %>
         <div class="container-fluid h-100">
 		<div class="row">
 			 <div class="col-sm-3 padding-0"style="background: rgba(213,0,0,.85);padding: 18px;">
@@ -53,7 +54,7 @@
 		<a href="controller.jsp?page=logout" class="btn btn-danger" style="float:right;color:white">Logout</a>
 	</div>
 					
-					<% } else{ --%>
+<% } else{ %>
 				<div class="container-fluid h-100">
 		<div class="row">
 			 <div class="col-sm-3 padding-0"style="background: rgba(213,0,0,.85);padding: 18px;">
