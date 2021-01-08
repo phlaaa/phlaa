@@ -8,6 +8,7 @@
 </head>
 <body>
 <jsp:useBean id="pDAO" class="database.adduser" scope="page"/>
+<jsp:useBean id="pDAO1" class="database.update" scope="page"/>
 
 <%
 if(request.getParameter("page").toString().equals("login"))
@@ -41,6 +42,23 @@ else if(request.getParameter("page").toString().equals("register"))
          
     pDAO.addNewStudent(fName,lName,uName,email,pass,contactNo,city,address);
     response.sendRedirect("login.jsp");
+}
+else if(request.getParameter("page").toString().equals("profile")){
+    
+    String fName =request.getParameter("fname");
+    String lName =request.getParameter("lname");
+    String uName=request.getParameter("uname");
+    String email=request.getParameter("email");
+    String pass=request.getParameter("pass");
+    String contactNo =request.getParameter("contactno");
+    String city =request.getParameter("city");
+    String address =request.getParameter("address");
+     String uType =request.getParameter("utype");
+    int uid=Integer.parseInt(session.getAttribute("userId").toString());
+
+     
+pDAO1.updateStudent(uid,fName,lName,uName,email,pass,contactNo,city,address,uType);
+response.sendRedirect("dashboard.jsp");
 }
 %>
 

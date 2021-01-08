@@ -85,18 +85,115 @@
            	  		</table>
            	  	<%
                if(user.getType().equals("admin")){
-               %><a class="btn btn-primary" href="adm-page.jsp?pgprt=0&pedt=1">Edit profile</a>
+               %><button class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter">Edit profile</button>
                 <% 
                }else{
                %><a class="btn btn-primary" href="student.jsp?pgprt=0&pedt=1">Edit profile</a>
                <% 
                			}
-     				}
+     }
                %>
            </div>
 			</div>
 					
-	</div>          
+	</div>
+	
+				
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLongTitle">Edit Profile</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      
+				   <form action="controller.jsp">
+				      <div class="modal-body">
+                        <input type="hidden" name="page" value="profile"> 
+                        <input type="hidden" name="utype" value="<%=user.getType()%>">
+				<table class="table table-striped table-hover">
+					
+					<tr>
+						<td>
+							<label>First Name</label>
+						</td>
+						<td>
+                                                    <input type="text" name="fname" value="<%=user.getFirstName() %>" class="form-control" placeholder="First Name">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Last Name</label>
+						</td>
+						<td>
+                                                    <input type="text"  name="lname" value="<%=user.getLastName() %>" class="form-control" placeholder="Last Name">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<label>User Name</label>
+						</td>
+						<td>
+                                                    <input type="text" name="uname" value="<%=user.getUserName() %>" class="form-control" placeholder="User Name">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Email</label>
+						</td>
+						<td>
+                                                    <input type="email" name="email" value="<%=user.getEmail() %>" class="form-control" placeholder="Email">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<label>Password</label>
+						</td>
+						<td>
+                                                    <input type="password" value="<%=user.getPassword() %>" name="pass" class="form-control" placeholder="Password">
+						</td>
+					</tr>
+                                        <tr>
+						<td>
+							<label>Contact No</label>
+						</td>
+						<td>
+                                                    <input type="text" name="contactno" value="<%=user.getContact() %>" class="form-control" placeholder="Contact No">
+						</td>
+					</tr>
+                                        <tr>
+						<td>
+							<label>City</label>
+						</td>
+						<td>
+                                                    <input type="text" name="city" value="<%=user.getCity() %>" class="form-control" placeholder="City">
+						</td>
+					</tr>
+                                        <tr>
+						<td>
+							<label>Address</label>
+						</td>
+						<td>
+                                                    <input type="text" name="address" value="<%=user.getAddress() %>" class="form-control" placeholder="Address">
+						</td>
+					</tr>
+				</table>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="submit" class="btn btn-primary">Save changes</button>
+				      </div>
+				     </form> 
+				    </div>
+				  </div>
+				</div>
+				
+	
+	         
 </div>    
            
 				
