@@ -77,8 +77,9 @@
 		<div class="card" style="width: 70%;margin-left:20px;height:50%;">
               <div class="title card-header"><center>Profile</center></div>
            	  <div class="card-body">
-           	  		<table class="table table-striped table-hover"> <tr><td>Your Name</td><td><%=user.getFirstName()+" " %><%=user.getLastName() %></td></tr>
+           	  		<table class="table table-striped table-hover"> <tr><td>Name</td><td><%=user.getFirstName()+" " %><%=user.getLastName() %></td></tr>
            	  		<tr><td>Email</td><td><%=user.getEmail() %></td></tr>
+           	  		<tr><td>UserName</td><td><%=user.getUserName() %></td></tr>
            	  		<tr><td>Contact No</td><td><%=user.getContact() %></td></tr>
            	  		<tr><td>City</td><td><%=user.getCity() %></td></tr>
            	  		<tr><td>Address</td><td><%=user.getAddress() %></td></tr>

@@ -9,7 +9,7 @@
 <body>
 <jsp:useBean id="pDAO" class="database.adduser" scope="page"/>
 <jsp:useBean id="pDAO1" class="database.update" scope="page"/>
-
+<jsp:useBean id="pDAO2" class="database.add_delCourse" scope="page"/>
 <%
 if(request.getParameter("page").toString().equals("login"))
 {
@@ -59,6 +59,18 @@ else if(request.getParameter("page").toString().equals("profile")){
      
 pDAO1.updateStudent(uid,fName,lName,uName,email,pass,contactNo,city,address,uType);
 response.sendRedirect("dashboard.jsp");
+}
+
+else if(request.getParameter("page").toString().equals("courses")){
+	
+    if(request.getParameter("operation").toString().equals("addnew")){
+        pDAO2.addNewCourse(request.getParameter("coursename"),Integer.parseInt(request.getParameter("totalmarks")),request.getParameter("time"));
+        response.sendRedirect("adm-page.jsp?pgprt=2");
+    }
+    else if(request.getParameter("operation").toString().equals("del")){
+        pDAO2.delCourse(request.getParameter("cname").toString());
+        response.sendRedirect("adm-page.jsp?pgprt=2");
+    }
 }
 %>
 

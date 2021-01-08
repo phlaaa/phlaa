@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="java.util.ArrayList"%>
+    <jsp:useBean id="pDAO2" class="database.add_delCourse" scope="page"/>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +24,7 @@
 	}
 </style>
 <body>
+
 	<div class="container-fluid">
 	
 			<div class="row" style="height:100%;">
@@ -81,7 +84,7 @@
 								</tr>
 							</thead>
 							<%
-								ArrayList list=pDAO.getAllCourses();
+								ArrayList list=pDAO2.getAllCourses();
 								for(int i=0;i<list.size();i+=2){
 							%>
 							<tr>
