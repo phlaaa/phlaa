@@ -44,6 +44,8 @@
 						<div class="title">Add New Course</div>
 						<center>
 							<form action="controller.jsp">
+							 <td colspan="2"><input type="hidden" name="page" value="courses">
+                    <input type="hidden" name="operation" value="addnew">
 								<br>
 								<table>
 									<tr>
@@ -61,10 +63,7 @@
 
 				                    <tr>
 				                    <td colspan="2"><br>
-                           			<!-- 
-                           				colspan="2"><input type="" name="page" value="courses">
-                    					<input type="" name="operation" value="addnew"> 
-                    				-->
+        
                        					<center><input type="submit" class="btn btn-primary btn-block" value="Add" name="submit"></center></td>
                        				</tr>
 								</table>
@@ -95,6 +94,7 @@
 							<%
 								}
 							%>
+							
 						</table>
 					</div>
 					

@@ -65,11 +65,11 @@ else if(request.getParameter("page").toString().equals("courses")){
 	
     if(request.getParameter("operation").toString().equals("addnew")){
         pDAO2.addNewCourse(request.getParameter("coursename"),Integer.parseInt(request.getParameter("totalmarks")),request.getParameter("time"));
-        response.sendRedirect("adm-page.jsp?pgprt=2");
+        response.sendRedirect("adminPanel.jsp?pagepart=2");
     }
     else if(request.getParameter("operation").toString().equals("del")){
         pDAO2.delCourse(request.getParameter("cname").toString());
-        response.sendRedirect("adm-page.jsp?pgprt=2");
+        response.sendRedirect("adminPanel.jsp?pagepart=2");
     }
 }
 %>
