@@ -37,7 +37,7 @@
 				 <div class="text-center">
 				 	<center>
 							<input type="submit" value="Login" class="btn btn-primary">
-							
+							<a class="btn btn-danger" href="signup.jsp">SignUp</a>
 					</center>
 				</div>
 				

@@ -1,6 +1,8 @@
+<%@page import="entities.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="java.util.ArrayList"%>
+    <jsp:useBean id="pDAO" class="database.adduser" scope="page"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,9 +60,9 @@
 									for(int i=0;i<list.size();i++){
 										user=(User)list.get(i);
 										if(user.getUserId()!=Integer.parseInt(session.getAttribute("userId").toString())){
-								--%>
+								%>
 								<tr>
-									<td><%= user.getFirstName()+" "user.getLastName() %></td>
+									<td><%= user.getFirstName()+" "+user.getLastName()%></td>
 									<td><%= user.getEmail() %></td>
 									<td><%= user.getCity() %></td>
 									<td><%= user.getAddress() %></td>

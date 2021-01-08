@@ -72,6 +72,20 @@ else if(request.getParameter("page").toString().equals("courses")){
         response.sendRedirect("adminPanel.jsp?pagepart=2");
     }
 }
+
+else if(request.getParameter("page").toString().equals("accounts")){
+    if(request.getParameter("operation").toString().equals("del")){
+        pDAO.delUser(Integer.parseInt(request.getParameter("uid")));
+        response.sendRedirect("adminPanel.jsp?pgprt=1");
+    }
+}
+
+else if(request.getParameter("page").toString().equals("logout")){
+    session.setAttribute("userStatus","0");
+    session.removeAttribute("examId");
+    session.removeAttribute("examStarted");
+    response.sendRedirect("login.jsp");
+}
 %>
 
 </body>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import database.database;
 import entities.User;
@@ -108,9 +109,7 @@ public class adduser {
             ps.setString(1, userId);
             ResultSet rs=ps.executeQuery();
             while(rs.next()){
-                userDetails=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)
-                                        ,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)
-                                            ,rs.getString(9),rs.getString(10));
+                userDetails=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
             }
             ps.close();
         } 
@@ -119,4 +118,33 @@ public class adduser {
         }
          return userDetails;
      }
+	 
+	 public ArrayList getAllUsers(){
+	        ArrayList list=new ArrayList();
+	        User user=null;	
+	        try {
+	            ps = con.prepareStatement("Select * from users");
+	            ResultSet rs=ps.executeQuery();
+	            while(rs.next()){
+	                user =new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
+	            list.add(user);
+	            }
+	        } catch (SQLException ex) {
+	           ex.printStackTrace();
+	            
+	        }
+	        return list;
+	    }
+	 
+	 public void delUser(int uid){
+	        try {
+	            String sql="DELETE from users where user_id=?";
+	            PreparedStatement ps=con.prepareStatement(sql);
+	            ps.setInt(1,uid);
+	            ps.executeUpdate();
+	            ps.close();
+	        } catch (SQLException ex) {
+	         ex.printStackTrace();   
+	        }
+	    }
 }
