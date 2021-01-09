@@ -10,7 +10,6 @@
 <jsp:useBean id="pDAO" class="database.adduser" scope="page"/>
 <jsp:useBean id="pDAO1" class="database.update" scope="page"/>
 <jsp:useBean id="pDAO2" class="database.add_delCourse" scope="page"/>
-<jsp:useBean id="pDAO3" class="database.questions" scope="page"/>
 <%
 if(request.getParameter("page").toString().equals("login"))
 {
@@ -86,22 +85,6 @@ else if(request.getParameter("page").toString().equals("logout")){
     session.removeAttribute("examId");
     session.removeAttribute("examStarted");
     response.sendRedirect("login.jsp");
-}
-
-else if(request.getParameter("page").toString().equals("questions")){
-    if(request.getParameter("operation").toString().equals("addnew")){
-        pDAO3.addQuestion(request.getParameter("coursename"),request.getParameter("question"),
-                request.getParameter("opt1"), request.getParameter("opt2"),request.getParameter("opt3"),
-        request.getParameter("opt4"), request.getParameter("correct"));
-        response.sendRedirect("adminPanel.jsp?pagepart=3");
-    }else if(request.getParameter("operation").toString().equals("del")){
-        pDAO2.delCourse(request.getParameter("cname").toString());
-        response.sendRedirect("adminPanel.jsp?pagepart=3");
-    }else if(request.getParameter("operation").toString().equals("delQuestion")){
-        pDAO3.delQuestion(Integer.parseInt(request.getParameter("qid")));
-        response.sendRedirect("adminPanel.jsp?pagepart=3");
-        
-    }
 }
 %>
 
