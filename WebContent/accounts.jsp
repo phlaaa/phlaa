@@ -29,7 +29,7 @@
 			<div class="row" style="height:100%;">
 				<div class="col-sm-3"style="background: rgba(213,0,0,.85);padding: 18px;">
 					<center><h2 style="font-family: sans-serif;">Online Examination System</h2></center>
-					<center><div class=" btn-group btn-group-vertical" style="margin-top: 110px;">
+					<center><div class=" btn-group btn-group-vertical" style="margin-top: 110px; margin-bottom: 210px;">
 						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
 						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=2"><h4>Courses</h4></a><br>
 						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=3"><h4>Questions</h4></a><br>
@@ -37,12 +37,15 @@
 					</div></center>
 				</div>
 				
-				<div class="col-sm-9" style="top: 100px;">
-					<div style="background:grey;height:100%;">
-						<div class="title"><h2>List Of All Registered Persons</h2></div>
+				
+					
+					     <div class="card" style="width: 70%;margin-left:20px;height:50%;">
+						<div class="card-header"><center class="title">List Of All Registered Persons</center>
 						<a class="btn btn-danger btn-lg" style="float:right;margin-right:15px;color:white">Add New Person</a>
-						<br>
-						<br>
+						</div>
+						
+
+						<div class="card-body">
 						<table class="table table-hover table-striped">
 							<thead>
 								<tr>
@@ -75,10 +78,12 @@
 								%>			
 							</tbody>
 						</table>
+						</div>
+					</div>
 					</div>
 				</div>
-			</div>
-	</div>
+				
+	
 	
 </body>
 </html>
