@@ -22,7 +22,6 @@ public class database {
 	{
 	System.out.println("Connection not established");
 	}
-    
 	return con;
 	}
 }

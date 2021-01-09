@@ -25,7 +25,6 @@ public class Questions {
     public void setQuestionId(int questionId) {
         this.questionId = questionId;
     }
-
     public String getQuestion() {
         return question;
     }

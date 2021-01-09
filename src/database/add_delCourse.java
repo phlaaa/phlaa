@@ -26,6 +26,7 @@ public class add_delCourse {
     public void delCourse(String cName){
         try {
             String sql="DELETE from courses where course_name=?";
+            
             ps=con.prepareStatement(sql);
             ps.setString(1,cName);
             ps.executeUpdate();

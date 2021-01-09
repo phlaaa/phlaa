@@ -122,6 +122,7 @@ public class adduser {
 	 public ArrayList getAllUsers(){
 	        ArrayList list=new ArrayList();
 	        User user=null;	
+	        
 	        try {
 	            ps = con.prepareStatement("Select * from users");
 	            ResultSet rs=ps.executeQuery();

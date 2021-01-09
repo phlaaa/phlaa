@@ -24,7 +24,6 @@ public class Courses {
 	    public String getcName() {
 	        return cName;
 	    }
-
 	    public void setcName(String cName) {
 	        this.cName = cName;
 	    }
