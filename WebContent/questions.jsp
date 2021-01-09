@@ -22,7 +22,7 @@
         font-size: 21px;
 		border-radius: 4px;
 		margin-left:15px;
-		width:50%;
+		width:70%;
 	}
 	.card {
 
