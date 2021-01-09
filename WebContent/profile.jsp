@@ -31,7 +31,6 @@
 }
 </style>
 <body>
-
  <%
            User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
  %>

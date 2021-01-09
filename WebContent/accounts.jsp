@@ -10,6 +10,7 @@
 <title>Accounts</title>
 <%@include file="bootstrap/bootstrap.jsp"%>
 </head>
+
 <style>
 	h2,h4 {color: white;}
 	.title

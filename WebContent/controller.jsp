@@ -81,6 +81,7 @@ else if(request.getParameter("page").toString().equals("accounts")){
     }
 }
 
+
 else if(request.getParameter("page").toString().equals("logout")){
     session.setAttribute("userStatus","0");
     session.removeAttribute("examId");

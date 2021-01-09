@@ -19,6 +19,7 @@
 					if(session.getAttribute("userStatus").equals("1")){
 	%>
 	
+	
 	<%
 		if(request.getParameter("pagepart").equals("1")){
 	%>

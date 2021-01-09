@@ -19,6 +19,7 @@
 	padding:5px;
 	float: left;
 }
+
 .show-correct
 {
  	background: linear-gradient(60deg, #66bb6a, #43a047);
