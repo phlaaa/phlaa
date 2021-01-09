@@ -23,6 +23,10 @@
 		margin-left:15px;
 		width:40%;
 	}
+	.card {
+
+  box-shadow: 10px 10px 5px grey;
+}
 </style>
 <body>
 	<div class="container-fluid">
