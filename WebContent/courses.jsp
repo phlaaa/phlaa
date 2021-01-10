@@ -60,7 +60,10 @@
 			                            <td><label>Exam Time</label></td>
 			                            <td><input type="text" name="time" class="form-control" placeholder="MM" style="width: 230px;"></td>
 				                    </tr>
-
+									<tr>
+			                            <td><label>Test Key</label></td>
+			                            <td><input type="text" name="testkey" class="form-control" placeholder="test key" style="width: 230px;"></td>
+				                    </tr>
 				                    <tr>
 				                    <td colspan="2"><br>
         

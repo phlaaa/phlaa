@@ -5,11 +5,12 @@ public class Courses {
 	   private String cName;
 	   private int tMarks;
 	   private String time;
+	   private String testkey;
 
-	    public Courses(String cName, int tMarks, String time) {
+	    public Courses(String cName, int tMarks, String time, String testkey) {
 	        this.cName = cName;
 	        this.tMarks = tMarks;
-	        
+	        this.testkey = testkey;
 	        this.time = time;
 	    }
 
@@ -42,5 +43,13 @@ public class Courses {
 
 	    public void setTime(String time) {
 	        this.time = time;
-	    }    
+	    }
+
+		public String getTestkey() {
+			return testkey;
+		}
+
+		public void setTestkey(String testkey) {
+			this.testkey = testkey;
+		}    
 	}

@@ -11,6 +11,7 @@
 <jsp:useBean id="pDAO1" class="database.update" scope="page"/>
 <jsp:useBean id="pDAO2" class="database.add_delCourse" scope="page"/>
 <jsp:useBean id="pDAO3" class="database.questions" scope="page"/>
+<jsp:useBean id="pDAO4" class="database.Exam" scope="page"/>
 <%
 if(request.getParameter("page").toString().equals("login"))
 {
@@ -65,7 +66,7 @@ response.sendRedirect("dashboard.jsp");
 else if(request.getParameter("page").toString().equals("courses")){
 	
     if(request.getParameter("operation").toString().equals("addnew")){
-        pDAO2.addNewCourse(request.getParameter("coursename"),Integer.parseInt(request.getParameter("totalmarks")),request.getParameter("time"));
+        pDAO2.addNewCourse(request.getParameter("coursename"),Integer.parseInt(request.getParameter("totalmarks")),request.getParameter("time"),request.getParameter("testkey"));
         response.sendRedirect("adminPanel.jsp?pagepart=2");
     }
     else if(request.getParameter("operation").toString().equals("del")){
@@ -103,6 +104,24 @@ else if(request.getParameter("page").toString().equals("questions")){
         response.sendRedirect("adminPanel.jsp?pagepart=3");
         
     }
+}
+
+else if(request.getParameter("page").toString().equals("exams")){
+    if(request.getParameter("operation").toString().equals("startexam")){
+        String cName=request.getParameter("coursename");
+        int userId=Integer.parseInt(session.getAttribute("userId").toString());
+      
+        if(pDAO2.checkTestKey(request.getParameter("testkey"),cName)){
+	       int examId=pDAO4.startExam(cName,userId);
+	        session.setAttribute("examId",examId);
+	        session.setAttribute("examStarted","1");
+	        response.sendRedirect("startExam.jsp?coursename="+cName);
+        }
+        else{
+        	request.setAttribute("key","-1");
+        	response.sendRedirect("studentPanel.jsp?pagepart=1");
+        }
+   }
 }
 %>
 
