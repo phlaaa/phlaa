@@ -87,8 +87,6 @@
                        }
                        
                        %>
-                       
-                       
                    <input type="hidden" name="page" value="exams">
                    <input type="hidden" name="operation" value="submitted"> 
                    <input type="submit" class="add-btn" value="Done">

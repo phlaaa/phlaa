@@ -1,3 +1,4 @@
+<%@page import="java.time.LocalTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
 <jsp:useBean id="pDAO2" class="database.add_delCourse" scope="page"/>
 <jsp:useBean id="pDAO3" class="database.questions" scope="page"/>
 <jsp:useBean id="pDAO4" class="database.Exam" scope="page"/>
+<jsp:useBean id="pDAO5" class="database.result" scope="page"/>
 <%
 if(request.getParameter("page").toString().equals("login"))
 {
@@ -123,6 +125,36 @@ else if(request.getParameter("page").toString().equals("exams")){
         }
    }
 }
+
+
+else if(request.getParameter("operation").toString().equals("submitted")){
+    try{
+		    String time=LocalTime.now().toString();
+		    int size=Integer.parseInt(request.getParameter("size"));
+		    int eId=Integer.parseInt(session.getAttribute("examId").toString());
+		    int tMarks=Integer.parseInt(request.getParameter("totalmarks"));
+		    session.removeAttribute("examId");
+		    session.removeAttribute("examStarted");
+		    for(int i=0;i<size;i++){
+		        String question=request.getParameter("question"+i);	
+		        
+		        String ans=request.getParameter("ans"+i);
+		        
+		        int qid=Integer.parseInt(request.getParameter("qid"+i));
+		        
+		        pDAO5.insertAnswer(eId,qid,question,ans);
+		    }
+		    System.out.println(tMarks+" conn\t Size: "+size);
+		    pDAO5.calculateResult(eId, tMarks, time, size);
+    
+    response.sendRedirect("feedback.jsp");
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+    
+    
+}
+
 %>
 
 </body>
