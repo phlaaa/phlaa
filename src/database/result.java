@@ -13,44 +13,28 @@ public class result {
         try {
             ps=con.prepareStatement("insert into answers(exam_id,question,answer,correct_answer,status) "
                     + "Values(?,?,?,?,?)");
-            ps.setInt(1,eId);
-System.out.println(question);
+           ps.setInt(1, eId);
             ps.setString(2, question);
-            ps.setString(3,ans);
-            String correct=getCorrectAnswer(qid);
-            ps.setString(4, correct);
-            ps.setString(5,getAnswerStatus(ans,correct));
-            ps.executeQuery();
-        } catch (SQLException ex) {
+            ps.setString(3, ans);
+            	PreparedStatement ps1=con.prepareStatement("Select correct from questions where question_id=?");
+            	ps1.setInt(1, qid);
+            	ResultSet rs=ps1.executeQuery();
+            	String a="";
+                while(rs.next()){
+                    a=rs.getString(1);
+                }
+            ps.setString(4,a);
+	            if(ans.equals(a))
+	            	 ps.setString(5, "correct");
+		        else
+		        	 ps.setString(5, "incorrect");
+		        
+            ps.executeUpdate();
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
    } 
-
-	private String getCorrectAnswer(int qid) {
-        String ans="";
-        try {
-            ps=con.prepareStatement("Select correct from questions where question_id=?");
-            ps.setInt(1,qid);
-            ResultSet rs=ps.executeQuery();
-            while(rs.next()){
-                ans=rs.getString(1);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }      
-        return ans;
-    }
-	
-	  private String getAnswerStatus(String ans, String correct) {
-	        String resp="";
-	        if(ans.equals(correct)){
-	            resp="correct";
-	        }else{
-	            resp="incorrect";
-	        }
-	        return resp;     
-	    }
-	  
+  
 	  public void calculateResult(int eid,int tMarks,String endTime,int size){
 	        
 	        try {
