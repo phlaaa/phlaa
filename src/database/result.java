@@ -35,15 +35,27 @@ public class result {
         }
    } 
   
+	  
 	  public void calculateResult(int eid,int tMarks,String endTime,int size){
 	        
 	        try {
 	            String sql="update exams set obt_marks=?, end_time=?,status=? where exam_id=?";
 	            ps=con.prepareStatement(sql);
-	            int obt=getObtMarks(eid,tMarks,size);
-	            ps.setInt(1,obt);
+	            	
+	            	PreparedStatement ps1=con.prepareStatement("select count(answer_id) from answers where exam_id=? and status='correct'");
+	            	ps1.setInt(1, eid);
+		            ResultSet rs=ps1.executeQuery();
+		            int m=0;
+		            while(rs.next())
+		            {
+			           m = rs.getInt(1);
+			        }
+		            float rat=(float)tMarks/size;
+			        rat=m*rat;
+			        
+	            ps.setFloat(1, rat);
 	            ps.setString(2,endTime);
-	            float percent=((obt*100)/tMarks);
+	            float percent=((rat*100)/tMarks);
 	            if(percent>=45.0){
 	                ps.setString(3,"Pass");
 	            }else{
@@ -51,29 +63,10 @@ public class result {
 	            }
 	            ps.setInt(4, eid);
 	            ps.executeUpdate();
-	        } catch (SQLException ex) {
+	        } 
+	        catch (SQLException ex) {
 	            ex.printStackTrace();
 	        }
 	    }
-	  
-	  private int getObtMarks(int examId,int tMarks,int size) {
-		    int m=0;
-		    
-		        try {
-		            ps=con.prepareStatement("select count(answer_id) from answers where exam_id=? and status='correct'");
-		            ps.setInt(1, examId);
-		            ResultSet rs=ps.executeQuery();
-		            while(rs.next()){
-		               m = rs.getInt(1);
-		            }
-		        } catch (SQLException ex) {
-		           ex.printStackTrace();
-		        }
-		        float rat=(float)tMarks/size;
-		        System.out.println(rat);
-		        rat=m*rat;
-		        System.out.println(rat);
-		    return m=(int) rat;
-		    } 
-
+	 
 }

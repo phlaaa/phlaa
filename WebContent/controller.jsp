@@ -144,7 +144,7 @@ else if(request.getParameter("operation").toString().equals("submitted")){
 		        pDAO5.insertAnswer(eId,qid,question,ans);
 		    }
 		    System.out.println(tMarks+" conn\t Size: "+size);
-		    //pDAO5.calculateResult(eId, tMarks, time, size);
+		    pDAO5.calculateResult(eId, tMarks, time, size);
     
     response.sendRedirect("feedback.jsp");
     }catch(Exception e){
