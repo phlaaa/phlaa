@@ -11,19 +11,21 @@ public class result {
 	
 	public void insertAnswer(int eId,int qid,String question,String ans){
         try {
-             ps=con.prepareStatement("insert into answers(exam_id,question,answer,correct_answer,status) Values(?,?,?,?,?)");
+            ps=con.prepareStatement("insert into answers(exam_id,question,answer,correct_answer,status) "
+                    + "Values(?,?,?,?,?)");
             ps.setInt(1,eId);
+System.out.println(question);
             ps.setString(2, question);
             ps.setString(3,ans);
             String correct=getCorrectAnswer(qid);
             ps.setString(4, correct);
             ps.setString(5,getAnswerStatus(ans,correct));
-            ps.executeUpdate();
+            ps.executeQuery();
         } catch (SQLException ex) {
-           ex.printStackTrace();
+            ex.printStackTrace();
         }
-   }
-	
+   } 
+
 	private String getCorrectAnswer(int qid) {
         String ans="";
         try {

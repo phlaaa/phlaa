@@ -120,11 +120,9 @@ else if(request.getParameter("page").toString().equals("exams")){
 	        response.sendRedirect("startExam.jsp?coursename="+cName);
         }
         else{
-        	request.setAttribute("key","-1");
         	response.sendRedirect("studentPanel.jsp?pagepart=1");
         }
    }
-}
 
 
 else if(request.getParameter("operation").toString().equals("submitted")){
@@ -133,28 +131,27 @@ else if(request.getParameter("operation").toString().equals("submitted")){
 		    int size=Integer.parseInt(request.getParameter("size"));
 		    int eId=Integer.parseInt(session.getAttribute("examId").toString());
 		    int tMarks=Integer.parseInt(request.getParameter("totalmarks"));
+			System.out.println("sdfsdd"+size+" "+eId+" "+tMarks+" "+time);
 		    session.removeAttribute("examId");
 		    session.removeAttribute("examStarted");
 		    for(int i=0;i<size;i++){
 		        String question=request.getParameter("question"+i);	
-		        
+		        System.out.println("Q"+i);
 		        String ans=request.getParameter("ans"+i);
 		        
 		        int qid=Integer.parseInt(request.getParameter("qid"+i));
-		        
+		        System.out.println(qid);
 		        pDAO5.insertAnswer(eId,qid,question,ans);
 		    }
 		    System.out.println(tMarks+" conn\t Size: "+size);
-		    pDAO5.calculateResult(eId, tMarks, time, size);
+		    //pDAO5.calculateResult(eId, tMarks, time, size);
     
     response.sendRedirect("feedback.jsp");
     }catch(Exception e){
-        e.printStackTrace();
-    }
-    
-    
+    	 System.out.println("error");
+    }   
+	}
 }
-
 %>
 
 </body>

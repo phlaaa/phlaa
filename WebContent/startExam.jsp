@@ -47,7 +47,7 @@
         </div>
         <div class="row" style="margin-top:80px;">
         <div class="col-md-12">
-        <form id="myform" action="controller.jsp">
+        <form action="controller.jsp">
                        
                        <%
                        ArrayList list=pDAO1.getQuestions(request.getParameter("coursename"),10);
@@ -89,7 +89,7 @@
                        %>
                    <input type="hidden" name="page" value="exams">
                    <input type="hidden" name="operation" value="submitted"> 
-                   <input type="submit" class="add-btn" value="Done">
+                   <input type="submit" class="btn btn-primary" value="Done">
                </form>
                
                
