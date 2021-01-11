@@ -58,7 +58,7 @@
             }else{%>
             <td style="background: bisque ;">Terminated</td>
             <% } %>
-			<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</button></td>
+			<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</button>
 			
 						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 						  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -75,7 +75,7 @@
 			                
 			                <%
 			                ArrayList list1=pDAO.getAllAnswersByExamId(e.getExamId());
-			                for(int j=0;i<list1.size();j++){
+			                for(int j=0;j<list1.size();j++){
 			                    Answers a=(Answers)list1.get(j);
 			                
 			          	  %>
@@ -101,6 +101,7 @@
 			    </div>
 			  </div>
 			</div>
+			</td>
         </tr>
        
        <% }
