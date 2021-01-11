@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import database.*;
+import entities.Answers;
+import entities.Exams;
 
 public class result {
 	final  static Connection con=database.getDBConnection();
@@ -68,5 +75,61 @@ public class result {
 	            ex.printStackTrace();
 	        }
 	    }
+	  
+	  
+	  
+	  public ArrayList getAllResultsFromExams(int stdId){
+	        ArrayList list=new ArrayList();
+	        Exams exam=null;
+	        try {
+	            ps=con.prepareStatement("select * from exams where std_id=? order by date desc");
+	            ps.setInt(1, stdId);
+	            ResultSet rs=ps.executeQuery();
+	            while(rs.next()){
+	                exam=new Exams(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)
+	                ,rs.getString(6),getFormatedTime(rs.getString(7)),getFormatedTime(rs.getString(8)),rs.getString(9),rs.getString(10));
+	                list.add(exam);
+	            }
+	        } catch (SQLException ex) {
+	            ex.printStackTrace();
+	        }
+	        return list;
+	        
+	    }
+	  
+	  String getFormatedTime(String time)
+	    {
+	        if(time!=null)
+	        {
+	            LocalTime localTime=LocalTime.parse(time);
+	            return  localTime.format(DateTimeFormatter.ofPattern("hh:mm a"));
+	        }
+	        else
+	        {    
+		        return  "-";
+		    }
+	    }
 	 
+	  
+	  public ArrayList getAllAnswersByExamId(int examId){
+	        ArrayList list=new ArrayList();
+	        try {
+	            
+	            String sql="Select * from answers where exam_id=?";
+	            ps=con.prepareStatement(sql);
+	            ps.setInt(1,examId);
+	            ResultSet rs=ps.executeQuery();
+	            Answers a;
+	            while(rs.next()){
+	               a = new Answers(
+	                       rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)
+	                    ); 
+	               list.add(a);
+	            }
+	            ps.close();
+	        } catch (SQLException ex) {
+	           ex.printStackTrace();
+	        }
+	        return list;
+	    }
 }

@@ -34,19 +34,19 @@ public class Exam {
         return examId;
     }
 	
-	 private  String getFormatedDate(String date)
+	 public String getFormatedDate(String date)
 	 {
 	        LocalDate localDate=LocalDate.parse(date);
 	        return localDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 	 }
 	 
-    private String getNormalDate(String date)
+    public String getNormalDate(String date)
     {
         String[] d=date.split("-");
         return d[2]+"-"+d[1]+"-"+d[0];
     }
     
-    private String getFormatedTime(String time)
+    String getFormatedTime(String time)
     {
         if(time!=null)
         {

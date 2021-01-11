@@ -33,7 +33,7 @@
             
                 %>
             
-                <jsp:include page="login.jsp"/>
+                <jsp:include page="result.jsp"/>
                 
                 <%
                 
