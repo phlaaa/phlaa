@@ -17,8 +17,8 @@
 			<center>
 				<div class=" btn-group btn-group-vertical" style="margin-top: 110px;margin-bottom: 210px;">
 					<a class="btn btn-outline-warning btn-block btn-sm"  href="studentPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
-					<a class="btn btn-outline-warning active btn-block btn-sm" href="studentPanel.jsp?pagepart=2"><h4>Exam</h4></a><br>
-					<a class="btn btn-outline-warning btn-block btn-sm" href="studentPanel.jsp?pagepart=3"><h4>Result</h4></a><br>
+					<a class="btn btn-outline-warning active btn-block btn-sm" href="studentPanel.jsp?pagepart=1"><h4>Exam</h4></a><br>
+					<a class="btn btn-outline-warning btn-block btn-sm" href="studentPanel.jsp?pagepart=2"><h4>Result</h4></a><br>
 				</div>
 			</center>
 		</div>

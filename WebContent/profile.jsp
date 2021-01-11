@@ -88,7 +88,7 @@
                %><button class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter">Edit profile</button>
                 <% 
                }else{
-               %><a class="btn btn-primary" href="student.jsp?pgprt=0&pedt=1">Edit profile</a>
+               %><button class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter">Edit profile</button>
                <% 
                			}
      }
