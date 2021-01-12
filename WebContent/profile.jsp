@@ -29,6 +29,16 @@
 
   box-shadow: 10px 10px 5px grey;
 }
+.s1
+{
+background-color: #42378f;
+background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
+padding: 18px;
+}
+.btn
+{
+border:none;
+}
 </style>
 <body>
  <%
@@ -41,14 +51,14 @@
            {
  %>
 				
-					 <div class="col-sm-3 padding-0"style="background: rgba(213,0,0,.85);padding: 18px;">
+					 <div class="col-sm-3 padding-0 s1">
 						<center><h2 style="font-family: sans-serif;">Online Examination System</h2></center>
 						<center>
 							<div class=" btn-group btn-group-vertical" style="margin-top: 110px;margin-bottom: 210px;">
-								<a class="btn btn-outline-warning active btn-block btn-sm" href="adminPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
-								<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=2"><h4>Courses</h4></a><br>
-								<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=3"><h4>Questions</h4></a><br>
-								<a class="btn btn-outline-warning  btn-block btn-sm" href="adminPanel.jsp?pagepart=1"><h4>Accounts</h4></a>
+								<a class="btn btn-outline-warning active btn-sm" href="adminPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
+								<a class="btn btn-outline-warning  btn-sm" href="adminPanel.jsp?pagepart=2"><h4>Courses</h4></a><br>
+								<a class="btn btn-outline-warning  btn-sm" href="adminPanel.jsp?pagepart=3"><h4>Questions</h4></a><br>
+								<a class="btn btn-outline-warning   btn-sm" href="adminPanel.jsp?pagepart=1"><h4>Accounts</h4></a>
 							</div>
 						</center>
 					</div>
@@ -58,13 +68,13 @@
            else
            {
 %>
-				 <div class="col-sm-3 padding-0"style="background: rgba(213,0,0,.85);padding: 18px;">
+				 <div class="col-sm-3 padding-0 s1">
 					<center><h2 style="font-family: sans-serif;">Online Examination System</h2></center>
 					<center>
 						<div class=" btn-group btn-group-vertical" style="margin-top: 110px;margin-bottom: 210px;">
-							<a class="btn btn-outline-warning active btn-block btn-sm"  href="studentPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
-							<a class="btn btn-outline-warning btn-block btn-sm" href="studentPanel.jsp?pagepart=1"><h4>Exam</h4></a><br>
-							<a class="btn btn-outline-warning btn-block btn-sm" href="studentPanel.jsp?pagepart=2"><h4>Result</h4></a><br>
+							<a class="btn btn-outline-warning active  btn-sm"  href="studentPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
+							<a class="btn btn-outline-warning  btn-sm" href="studentPanel.jsp?pagepart=1"><h4>Exam</h4></a><br>
+							<a class="btn btn-outline-warning  btn-sm" href="studentPanel.jsp?pagepart=2"><h4>Result</h4></a><br>
 						</div>
 					</center>
 				</div>

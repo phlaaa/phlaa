@@ -11,50 +11,85 @@
 
   box-shadow: 10px 10px 5px grey;
 }
+.f1
+{
+width:100%;
+border:none;
+border-bottom:2px solid black;
+}
+.h1 {
+  font-size: 65	px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-header
+{ background: #200122;
+  background: -webkit-linear-gradient(to right, #200122, #6f0000); 
+  background: linear-gradient(to right, #200122, #6f0000);
+color:white;
+}
+.card {
+
+  box-shadow: 10px 10px 5px grey;
+}
+
 </style>
 </head>
 <body>
-
+<div class="container-fluid p-0">
+    <h1 class="h1" style="box-shadow: 10px 10px 5px grey;"><img src="images/logo.jpg"height=100px>Online Examination System</h1>
+    
+  </div>
 	<div class="container mt-4">
-		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<div class="card">
+		<div class="card">
 					<div class="card-header bg-success">
 						<h1>Create Account</h1>
 					</div>
 					<div class="card-body">
-					<div class="form group">
-<form action="controller.jsp">
-<input type="hidden" name="page" value="register"> 
-	<label for="First Name"><i class="fa fa-user" aria-hidden="true"></i>First Name</label>
- <input type="text" class=" form-control"name="fName" placeholder="First Name" required>
- 
- 	<label for="Last Name"><i class="fa fa-user" aria-hidden="true"></i>Last Name</label>
- <input type="text" class=" form-control"name="lName" placeholder="Last Name" required>
- 
- 	<label for="User Name"><i class="fa fa-user" aria-hidden="true"></i>User Name</label>
- <input type="text" class=" form-control"name="uName" placeholder="User Name" required>
- 
-<label><i class="fa fa-envelope" aria-hidden="true"></i> Email </label> <input type="email" class=" form-control" name="email" placeholder="Enter Email" required>
- 
-<label><i class="fa fa-key" aria-hidden="true"></i> Password </label><input type="password" class=" form-control" name="pass" placeholder="Enter Password" required>
-
-
-<label for="Contact no"><i class="fa fa-user" aria-hidden="true"></i>contact no</label>
- <input type="text" class=" form-control"name="contact" placeholder="contact no" required>
-
-<label><i class="fa fa-home" aria-hidden="true"></i> City </label><input type="text" class=" form-control"name="city" placeholder="Enter city" required> <br>
-
-<label><i class="fa fa-home" aria-hidden="true"></i> Address </label><input type="text" class=" form-control"name="address" placeholder="Enter Address" required> <br>
- 
-<div class="text-center">
-<input  class="btn btn-primary" type="submit" Value="Create" name="create">
-<a class="btn btn-success" href="login.jsp"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a>
-</div>
-</form>
-</div>
-</div>
-</div>
+					
+					<form action="controller.jsp">
+					<input type="hidden" name="page" value="register">
+						<table class="table table-borderless"> 
+							<tr>
+								<td><i class="fa fa-user" aria-hidden="true"></i>
+					 			<input type="text" class="f1"name="fName" placeholder="First Name" required></td>
+					 			
+					 			<td><i class="fa fa-user" aria-hidden="true"></i>
+					 			<input type="text" class=" f1"name="lName" placeholder="Last Name" required></td>
+					 		</tr>
+					 		<tr>
+					 			<td colspan="2"><i class="fa fa-envelope" aria-hidden="true"></i>
+					 			<input type="email" class=" f1" name="email" placeholder="Enter Email" required></td>
+					 		</tr>
+					 		<tr>
+					 			<td><i class="fa fa-user" aria-hidden="true"></i>
+					 			<input type="text" class=" f1"name="uName" placeholder="User Name" required></td>
+					 			
+					 			<td><i class="fa fa-key" aria-hidden="true"></i>
+					 			<input type="password" class=" f1" name="pass" placeholder="Enter Password" required></td>
+					 			
+					 		</tr>
+					 		<tr>
+					 			<td><i class="fa fa-user" aria-hidden="true"></i>
+					 			<input type="text" class=" f1"name="contact" placeholder="contact no" required></td>
+					 			
+					 			<td><i class="fa fa-home" aria-hidden="true"></i> 
+					 			<input type="text" class=" f1"name="city" placeholder="Enter city" required></td>
+					 		</tr>
+					 		<tr>
+					 			<td colspan="2"><i class="fa fa-home" aria-hidden="true"></i>
+					 			<input type="text" class=" f1"name="address" placeholder="Enter Address" required></td>
+					 		</tr>
+					 	
+					 </table>
+					
+					
+					<div class="text-center">
+					<input  class="btn btn-primary" type="submit" Value="Create" name="create">
+					<a class="btn btn-success" href="login.jsp"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a>
+					</div>
+					</form>
 </div>
 </div>
 </div>

@@ -7,13 +7,30 @@
 <title>Login </title>
 <%@include file="bootstrap/bootstrap.jsp"%>
 <style>
+.h1 {
+  font-size: 65	px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-header
+{ background: #200122;
+  background: -webkit-linear-gradient(to right, #200122, #6f0000); 
+  background: linear-gradient(to right, #200122, #6f0000);
+color:white;
+}
 .card {
 
   box-shadow: 10px 10px 5px grey;
 }
+
 </style>
 </head>
 <body>
+  <div class="container-fluid p-0">
+    <h1 class="h1" style="box-shadow: 10px 10px 5px grey;"><img src="images/logo.jpg"height=100px>Online Examination System</h1>
+    
+  </div>
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
@@ -21,7 +38,7 @@
 					<div class="card-header bg-success">
 						<h1>Login </h1>
 					</div>
-					<div class="card-body">
+					<div class="card-body ">
 					
 	<form action="controller.jsp" method="post">
 	<input type="hidden" name="page" value="login"> 
