@@ -41,7 +41,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-5">
-							<div class="card mt-5" style="width: auto;height:100%;">
+							<div class="card mt-5 overflow-hidden" style="width: auto;height:auto;">
               					<div class="title card-header"><center>Add Courses</center></div>
 								<div class="card-body">
 									<form action="controller.jsp">
@@ -75,9 +75,9 @@
 						</div>
 					
 						<div class="col-sm-7">
-							<div class="card mt-5" style="width: auto;height:100%">
+							<div class="card mt-5" style="width: auto;">
               					<div class="title card-header"><center>All Courses</center></div>
-              					<div class="card-body"style="overflow-y:scroll;">
+              					<div class="card-body" style="width: auto;height:40%; overflow-y:scroll;">
 									<table class="table table-hover table-striped">
 										<thead>
 											<tr>
