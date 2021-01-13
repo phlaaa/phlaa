@@ -9,48 +9,39 @@
 <meta charset="ISO-8859-1">
 <title>Accounts</title>
 <%@include file="bootstrap/bootstrap.jsp"%>
+<link rel="stylesheet" href="style.css">
 </head>
-
-<style>
-	h2,h4 {color: white;}
-	.title
-	{
-		background: linear-gradient(60deg, #ffa726, #fb8c00);
-		box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 0, 0, 0.4);
-		padding-top:17px;
-		padding-left: 15px;
-        font-size: 21px;
-		border-radius: 4px;
-		margin-left:15px;
-		width:40%;
-	}
-	.card {
-
-  box-shadow: 10px 10px 5px grey;
-}
-</style>
 <body>
-	<div class="container-fluid">
-			<div class="row" style="height:100%;">
-				<div class="col-sm-3"style="background: rgba(213,0,0,.85);padding: 18px;">
-					<center><h2 style="font-family: sans-serif;">Online Examination System</h2></center>
-					<center><div class=" btn-group btn-group-vertical" style="margin-top: 110px; margin-bottom: 210px;">
-						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=0"><h4>Profile</h4></a><br>
-						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=2"><h4>Courses</h4></a><br>
-						<a class="btn btn-outline-warning btn-block btn-sm" href="adminPanel.jsp?pagepart=3"><h4>Questions</h4></a><br>
-						<a class="btn btn-outline-warning active btn-block btn-sm" href="adminPanel.jsp?pagepart=1"><h4>Accounts</h4></a>
-					</div></center>
-				</div>
-				
-				
+<%
+           User user1=pDAO.getUserDetails(session.getAttribute("userId").toString());
+ %>		
+ <div class="row">
+		<div class="col-sm-3 c1">
+					<div class="py-4 px-3 mb-4">
+						<div class="d-flex align-items-center">
+				      		<i class="fa fa-user" style="font-size: 5em;" ></i>
+				      		<div class="media-body pl-3">
+				        		<h4 class="m-0"><%=user1.getFirstName()+" "+user1.getLastName() %></h4>
+				        		<h6><%=user1.getType() %></h6>
+				      		</div>
+				    	</div>
+				  	</div>
+				  	<ul class="nav flex-column mb-0 py-5">
+				    	<li><a class="btn btn-outline-warning  btn-block" href="adminPanel.jsp?pagepart=0"><h4>Profile</h4></a><br></li>
+				    	<li><a class="btn btn-outline-warning  btn-block" href="adminPanel.jsp?pagepart=2"><h4>Courses</h4></a><br></li>
+				    	<li><a class="btn btn-outline-warning  btn-block" href="adminPanel.jsp?pagepart=3"><h4>Questions</h4></a><br></li>
+				    	<li><a class="btn btn-outline-warning active  btn-block" href="adminPanel.jsp?pagepart=1"><h4>Accounts</h4></a></li>
+				  	</ul>
+										
+					</div>
 					
-					     <div class="card" style="width: 70%;margin-left:20px;height:50%;">
-						<div class="card-header"><center class="title">List Of All Registered Persons</center>
-						<a class="btn btn-danger btn-lg" style="float:right;margin-right:15px;color:white">Add New Person</a>
-						</div>
-						
-
-						<div class="card-body">
+						<div class="col-sm-9">
+			<div class="container">
+				<div class="card mt-5" style="width: auto;height:100%;">
+              		<div class="title card-header"><center>List Of All Accounts</center></div>
+           	  		<div class="card-body">
+           	  		<!--  	<a class="btn btn-danger btn-lg" style="float:right;margin-right:15px;color:white">Add New Person</a> -->
+              		
 						<table class="table table-hover table-striped">
 							<thead>
 								<tr>

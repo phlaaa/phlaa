@@ -7,11 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container-fluid">
-	<div style="box-shadow:0 4px 20px 0px rgba(0, 0, 0, 0.14);">
-		<center><h1 style="color: #CCCCCC;font-family: sans-serif;font-weight: bold;padding-left: 200px;">Student Panel</h1>
-		<a href="controller.jsp?page=logout" class="btn btn-danger" style="float:right;color:white">Logout</a></center>
-	</div>
+	<a href="controller.jsp?page=logout" class="btn btn-danger" style="float:right;color:white">Logout</a>
+	
 
 	<%
 	 session.setAttribute("key", "1");
@@ -52,11 +49,7 @@
             
           
            %>
-            
 
-	
-
-</div>
 
 
 </body>

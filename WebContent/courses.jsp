@@ -75,7 +75,7 @@
 						</div>
 					
 						<div class="col-sm-7">
-							<div class="card mt-5" style="width: auto;">
+							<div class="card mt-5" style="width: auto;max-height: 70%;">
               					<div class="title card-header"><center>All Courses</center></div>
               					<div class="card-body" style="width: auto;height:40%; overflow-y:scroll;">
 									<table class="table table-hover table-striped">
