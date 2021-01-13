@@ -8,7 +8,7 @@
 <%@include file="bootstrap/bootstrap.jsp"%>
 </head>
 <body>
-
+<a href="controller.jsp?page=logout" class="btn btn-danger" style="float:right;color:white">Logout</a>
 	<%
 	if(session.getAttribute("userStatus")!=null){
 					if(session.getAttribute("userStatus").equals("1")){

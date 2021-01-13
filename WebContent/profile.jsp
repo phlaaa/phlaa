@@ -11,38 +11,12 @@
 <%@include file="bootstrap/bootstrap.jsp"%>
 <link rel="stylesheet" href="style.css">
 </head>
-<style>
-	h2,h4 {color: white;
-	
-	}
-	.title
-	{
-		background: linear-gradient(60deg, #ffa726, #fb8c00);
-		box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 0, 0, 0.4);
-		padding-top:17px;
-		padding-left: 15px;
-        font-size: 21px;
-		border-radius: 4px;
-		margin-left:15px;
-		width:40%;
-	}
-	.card {
 
-  box-shadow: 10px 10px 5px grey;
-}
-.s1
-{
-background-color: #42378f;
-background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
-padding: 18px;
-}
-
-</style>
 <body>
  <%
            User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
  %>
-<div class="container-fluid ">
+
 	<div class="row">
 		<div class="col-sm-3 c1">
   					
@@ -92,7 +66,7 @@ padding: 18px;
 
 		<div class="col-sm-9">
 			<div class="container">
-				<div class="card" style="width: auto;height:100%;">
+				<div class="card mt-5" style="width: auto;height:100%;">
               		<div class="title card-header"><center>Profile</center></div>
            	  		<div class="card-body">
            	  			<table class="table table-striped table-hover">
@@ -163,7 +137,7 @@ padding: 18px;
 															</tr>
 															<tr>
 																<td><label>Address</label></td>
-																<td><input type="text" name="address" value="<%=user.getAddress() %>" class="form-control" placeholder="Address">/td>
+																<td><input type="text" name="address" value="<%=user.getAddress() %>" class="form-control" placeholder="Address"></td>
 															</tr>
 														</table>
 									      			</div>
@@ -181,6 +155,6 @@ padding: 18px;
 			</div> 
 		</div>	   
 	</div>       
-</div>			
+			
 </body>
 </html>
