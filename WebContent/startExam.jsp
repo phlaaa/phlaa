@@ -93,7 +93,7 @@ ul{list-style-type: none;}
                   
                </form>
                <div style="position:absolute;margin-top:50%;left:90%;">
-                 
+                 	
                  <button class="btn btn-primary" id="next">Next</button>
         		 <button class="btn btn-danger" id="prev">Prev</button>
         </div>
