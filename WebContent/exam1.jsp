@@ -48,6 +48,7 @@
         <% 
             ArrayList list1=pDAO.getAllCourses();
             
+        
             for(int i=0;i<list1.size();i=i+2){
         %>
         <option value="<%=list1.get(i)%>"><%=list1.get(i)%></option>
