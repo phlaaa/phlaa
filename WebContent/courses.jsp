@@ -17,6 +17,8 @@
 
 	<%
            User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
+	if(user.getType().endsWith("admin"))
+	{
  	%>
 	<div class="row">
 		<div class="col-sm-3 c1">
@@ -106,5 +108,12 @@
 			</div>
 		</div>
 	</div>
+<%
+		}
+	%>
+	
+<script>
+  location.replace("login.jsp");
+</script>
 </body>
 </html>
