@@ -129,9 +129,13 @@ if(user.getType().endsWith("admin"))
 </div>
 <%
 		}
-%>
+else{
+	%>
+	
 <script>
   location.replace("login.jsp");
 </script>
+
+<%} %>
 </body>
 </html>

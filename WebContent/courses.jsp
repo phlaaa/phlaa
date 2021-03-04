@@ -110,10 +110,13 @@
 	</div>
 <%
 		}
+	else{
 	%>
 	
 <script>
   location.replace("login.jsp");
 </script>
+
+<%} %>
 </body>
 </html>
