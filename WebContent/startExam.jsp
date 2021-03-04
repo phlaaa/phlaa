@@ -207,9 +207,9 @@ document.addEventListener("visibilitychange", event => {
 		  count++;
 	    console.log("tab is inactive");
 	  }
-	  //if(count==5){
-		//  document.getElementById("myform").submit();
-	  //}
+	  if(count==10){
+	  	document.getElementById("myform").submit();
+	  }
 		  
 	})
 	
