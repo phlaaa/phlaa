@@ -40,24 +40,18 @@ ul{list-style-type: none;}
      			<div class="row">
      				<div class="col-md-12" >
          				<h1 class="h1 row" style="box-shadow: 10px 10px 5px grey;position: fixed;width:101%;">
-         					<div class="col-1">
+         					<div class="col-md-2">
          						<img src="images/logo.jpg"height=100px>
          					</div>
-         					<div class="col-1 mt-3">
+         					<div class="col-md-1 mt-3">
          						<h1><% String str =  request.getParameter("coursename"); str = str.toUpperCase(); %><%= str %></h1>
          					</div>
-         					<div  class="col-2 mt-3">
-         						<h4>
-         							<p>Max. Marks :- <%= pDAO.getTotalMarksByName(request.getParameter("coursename")) %></p>
-         							<p>Total Questions :- <%= list.size() %></p></h4>
-         					</div>
-         					<div class="col-2">
-         					               				
-                   				<input type="submit" class="btn btn-primary" value="Submit">
-         					</div>
-         					<div class="col-6 p-3">
-      					 		<span id="remainingTime" style="margin-left:80%;margin-top:15px;font-size: 23px;background: rgba(255,0,77,0.38);border-radius: 5px;padding: 10px;box-shadow: 2px -2px 6px 0px;">
+         					<div class="col-md-7 p-3">
+         						<span id="remainingTime" style="float:right;margin-top:15px;font-size: 23px;background: rgba(255,0,77,0.38);border-radius: 5px;padding: 10px;box-shadow: 2px -2px 6px 0px;">
         						</span>
+         					</div>
+         					<div class="col-md-2">
+      					 		<video id="video" style="width:130px; height:115px;float:right;" autoplay></video>
         					</div>
         				</h1>
         			</div>
@@ -110,8 +104,24 @@ ul{list-style-type: none;}
         					</div>
                    				<input type="hidden" name="page" value="exams">
                    				<input type="hidden" name="operation" value="submitted">                   				
-                   				<input type="submit" class="btn btn-primary" value="Submit">
-                  
+                   				<a class="btn btn-primary" value="Submit"data-toggle="modal" data-target="#exampleModalCenter">Finish Test</a>
+                  						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalCenterTitle">Are You Sure To Finish Test???</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										        <button type="submit" class="btn btn-primary">Finish</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+								    
                			</form>
                			
       <%
@@ -120,6 +130,14 @@ ul{list-style-type: none;}
       %>
       </div>  
       </div> 
+		    
+	
+    
+      <span class="alert alert-danger"id="alert" style="float: right;margin-top:30px;">
+    		<strong>Warning!</strong> Dont't Switch Tab!!!!   
+  	</span>
+  	
+  	
 </body>
 
 
@@ -171,6 +189,53 @@ if(sec==0){
     
 }
 }
+
+var count = 0;
+document.getElementById("alert").style.display="none";
+document.addEventListener("visibilitychange", event => {
+	  if (document.visibilityState == "visible") {
+	    console.log("tab is active")
+	    if(count>0)
+	    {
+	    	document.getElementById("alert").style.display="block";
+	    	setTimeout(() => {
+				document.getElementById("alert").style.display="none";
+			}, 5000);
+	    }
+	    
+	  } else {
+		  count++;
+	    console.log("tab is inactive");
+	  }
+	  //if(count==5){
+		//  document.getElementById("myform").submit();
+	  //}
+		  
+	})
+	
+	
+	
+	var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        video.srcObject = stream;
+        video.play();
+    });
+}
+//var canvas = document.getElementById('canvas');
+//var context = canvas.getContext('2d');
+//var video = document.getElementById('video');
+
+// Trigger photo take
+//document.getElementById("snap").addEventListener("click", function() {
+	//context.drawImage(video, 0, 0, 640, 480);
+//});
+window.history.forward(); 
+  function noBack() {
+	  window.history.forward(); 
+} 
 </script>
 
 </html>
